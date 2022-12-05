@@ -1,0 +1,17 @@
+#include <Arduino.h>
+#include <cyberpi.h>
+CyberPi cyber;
+
+void setup() {
+  cyber.begin();
+  for (int i = 0; i < 8; i++){
+    for (int j = 0; j < 8; j++){
+      cyber.set_lcd_pixel(64 + j, 64 + i, 0xFFFF);
+    }
+  }
+  cyber.render_lcd();
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+}
